@@ -18,8 +18,3 @@ def show_recommender():
 def train_nmf():
     retrain_nmf()
     return render_template('retrain.html')
-
-@app.route('/data')
-def show_data():
-    results = find_some_data()
-    return render_template('data.html', data=results)
