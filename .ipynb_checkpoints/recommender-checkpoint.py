@@ -26,7 +26,7 @@ def retrain_nmf():
     #this is a function which retrains periodically my nmf model
     #it should be trained on the latest user-ratings matrix available
     R = np.array(session.query(umr).all()).T
-    model = NMF(n_components=2)
+    model = NMF(n_components=2, init='random', random_state=10)
     model.fit(R)
     Q = model.components_
     P = model.transform(R)
@@ -64,12 +64,11 @@ def get_ml_recommendations(user_input):
     for i in range(len(movie_ids)):
         query[movie_ids[i]] = movie_ratings[i]
 
-    query = query.reshape(-1,1).T
     Q = model.components_
     #in this case, a new user providing ratings for the 5 movies.
-    P = model.transform(query)
-    recommendation = np.dot(P,Q)[0] #take the result of the prediction
-    recommendation = np.argsort(recommendation) #get the index of the best values
-    random = recommendation[-5:][np.random.randint(0,4)] # pick one at random
+    R_pred = model.transform(np.array(query).reshape(1, data_len))
+    R_pred = np.dot(R_pred,Q)[0] #take the result of the prediction
+    R_pred = np.argsort(R_pred) #get the index of the best values
+    random = R_pred[-5:][np.random.randint(0,4)] # pick one at random
     film = session.query(movies.columns.title).filter(movies.columns.index == f'{random}').limit(1).all()[0][0]
     return str(film)
