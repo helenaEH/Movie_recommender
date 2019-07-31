@@ -107,3 +107,4 @@ Werkzeug==0.15.4
 whichcraft==0.6.0
 wrapt==1.11.2
 xlrd==1.2.0
+mpi4py==3.0.2
