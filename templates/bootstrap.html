@@ -13,64 +13,89 @@
 
   <body>
 
-    <!-- I REMOVED A . FROM NAVBAR WHICH RESPACED MY OPTIONS NICELY -->
-    <!-- WE CAN ALSO SIMPLIY THE PATH IN THE HREF HERE TO POINT LOCALLY -->
-    <div class='navbar bg-dark text-light'>
-      <a class ='text-light' href="/">Home</a>
-      <a class ='text-light' href="/train">Retrain my AI!</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Navbar</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <!-- WRAP EVERYTHING IN CONTAINERS IN THE SITE BECAUSE FORMATTING IS EASIER-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/train">Retrain my AI!</a>
+      </li>
+    </ul>
+  </nav>
+
   <div class="container">
-    <img class="rounded mx-auto d-block mt-2" style="width: 339px; height: 226px !important;" src="http://www.media3.hw-static.com/media/2017/05/wenn_snoopdogg_051717_1800x1200-1800x1200.jpg" alt="wenn_snoopdogg_051717_1800x1200" width="728" height="485" data-src="http://www.media3.hw-static.com/media/2017/05/wenn_snoopdogg_051717_1800x1200-1800x1200.jpg">
+    <img class="rounded mx-auto d-block mt-3" style="width: 339px; height: 250px !important;" src="https://i.imgflip.com/8n1ya.jpg" alt="popcorn_051717_1800x1200" width="728" height="500" data-src="https://i.imgflip.com/8n1ya.jpg">
   </div>
 
     <div class = "container mt-1">
-    <div class = "jumbotron bg-danger text-light mt-3 mr-1 mb-1 ml-1">
-      <h1 class='text-center'> Welcome to our awesome movie recommender! </h1>
+    <div class = "jumbotron bg-danger text-light mt-3 mr-3 mb-1 ml-3">
+      <h1 class='text-center'> Welcome to the movie recommender! </h1>
       <hr class="my-4">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
     </div>
     </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <p class="">First movie = {{movie1}}</p>
-      </div>
-      <div class="col-sm">
-        <h1 class='bg-danger text-dark'>Second movie = {{movie2}}</h1>
-      </div>
-      <div class="col-sm">
-        <h1>Third movie = {{movie3}}</h1>
-      </div>
-    </div>
-</div>
-
 
 <div class = "container">
-  <p>Please rate the following movies:</p>
-
+  <div class = "jumbotron bg-light text-dark mr-3 mt-1 ml-3">
+  <p>Please enter three movies that you have seen and rate them on a scale from 1 to 5:</p>
   <form action='/recommender'>
     <div class='form-group'>
-        <input class="form-control" name='Titanic' autocomplete='off' placeholder='Rate Titanic'><br>
+        <label class="control-label">First movie</label>
+        <input class="form-control" name='Movie1' autocomplete='off' placeholder='Enter Movie Title'>
     </div>
+      <label for="exampleFormControlSelect2">How would you rate this movie?</label>
+    <select multiple class="form-control" name="Rating1" id="exampleFormControlSelect1">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <div>
     <div class='form-group'>
-        <input class="form-control" name='Pulp Fiction' autocomplete='off' placeholder='Pulp Fiction'><br>
+      <label class="control-label">Second movie</label>
+        <input class="form-control" name='Movie2' autocomplete='off' placeholder='Enter Movie Title'>
     </div>
-    <div class='form-group'>
-        <input class="form-control" name='Inception' autocomplete='off' placeholder='Rate Inception'><br>
+      <label for="exampleFormControlSelect2">How would you rate this movie?</label>
+    <select multiple class="form-control" name="Rating2" id="exampleFormControlSelect2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
     </div>
+       <div class='form-group'>
+         <label class="control-label">Third movie</label>
+        <input class="form-control" name='Movie3' autocomplete='off' placeholder='Enter Movie Title'>
+    </div>
+      <label for="exampleFormControlSelect2">How would you rate this movie?</label>
+    <select multiple class="form-control" name="Rating3" id="exampleFormControlSelect3">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
     <input class = 'input-submit' type='submit' value='Get Recommendations!'>
-  </form>
-
+   </form>
+  </div>
 </div>
-
+​
 
 <div class = "container mt-5 mb-2">
 <footer class = "bg-danger text-white">
     <div class = "container">
-        &copy; 2019 SIGMOID_SAFFRON
+        &copy; 2019 HELENA'S MOVIE RECOMMENDER
     </div>
 </footer>
 </div>
