@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/styles.css">
+
+<title>Movie Recommender!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="bg">
+
+<div class="bg-img">
+  <div class="container">
+    <div class="topnav">
+      <a href="#home">Home</a>
+      <a href="/train">Retrain my AI!</a>
+      <a href="https://github.com/helenaEH">GitHub</a>
+      <a href="https://www.linkedin.com/in/helena-eneli-heno">LinkedIn</a>
+    </div>
+  </div>
+</div>
+<div>
+  <p><hr/><p>
+</div>
+<div class="container-fluid">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-4 text-light">
+              <h3 id="rcorners1"> Welcome to the Movie Recommender!</h3>
+              <p id="rcorners2">This applications uses unsupervised learning to give you movie recommendations based on the ratings of the movies you have already seen!</p>
+            </div>
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-1 col-lg-5 bg-image"></div>
+    <div class="col-md-12 col-lg-12">
+      <div class="login d-flex align-items-center py-10">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-23 col-sm-15 mx-auto">
+              <h3 class="login-heading mb-10 text-light">Please rate 3 movies that you have seen: </h3>
+                    <form action='/recommender'>
+
+                      <div class='form-group'>
+                          <label class="control-label text-light">First movie</label>
+                          <input class="form-control" name='Movie1' autocomplete='off' placeholder='Enter Movie Title'>
+                      </div>
+
+                           <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox11" name = "rating1" value="1">
+                            <label class="form-check-label" for="inlineCheckbox11">1</label>
+                            </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox12" name = "rating1" value="2">
+                            <label class="form-check-label" for="inlineCheckbox12">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox13" name = "rating1" value="3">
+                            <label class="form-check-label" for="inlineCheckbox13">3</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox14" name = "rating1" value="4">
+                            <label class="form-check-label" for="inlineCheckbox14">4</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox15" name = "rating1" value="5">
+                            <label class="form-check-label" for="inlineCheckbox15">5</label>
+                          </div>
+
+                      <div class='form-group'>
+                        <label class="control-label text-light">Second movie</label>
+                          <input class="form-control" name='Movie2' autocomplete='off' placeholder='Enter Movie Title'>
+                      </div>
+
+                           <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox21" name = "rating1" value="1">
+                            <label class="form-check-label" for="inlineCheckbox21">1</label>
+                            </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox22" name = "rating1" value="2">
+                            <label class="form-check-label" for="inlineCheckbox22">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox23" name = "rating1" value="3">
+                            <label class="form-check-label" for="inlineCheckbox23">3</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox24" name = "rating1" value="4">
+                            <label class="form-check-label" for="inlineCheckbox24">4</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox25" name = "rating1" value="5">
+                            <label class="form-check-label" for="inlineCheckbox25">5</label>
+                          </div>
+
+                      <div class='form-group'>
+                        <label class="control-label text-light">Third movie</label>
+                          <input class="form-control" name='Movie3' autocomplete='off' placeholder='Enter Movie Title'>
+                      </div>
+                      <div></div>
+                           <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox31" name = "rating1" value="1">
+                            <label class="form-check-label" for="inlineCheckbox31">1</label>
+                            </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox32" name = "rating1" value="2">
+                            <label class="form-check-label" for="inlineCheckbox32">2</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox33" name = "rating1" value="3">
+                            <label class="form-check-label" for="inlineCheckbox33">3</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox34" name = "rating1" value="4">
+                            <label class="form-check-label" for="inlineCheckbox34">4</label>
+                          </div>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox35" name = "rating1" value="5">
+                            <label class="form-check-label" for="inlineCheckbox35">5</label>
+                          </div>
+
+                      <input class="btn btn-primary btn-block btn-login text-uppercase mb-2 mt-3" type="submit" value="Get Recommendations!">
+                      </form>
+                    </div>
+                  </div>
+               </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer text-light">
+    <div class="container">© 2019 Copyright: Helena's Movie Recommender</div>
+</footer>
+</div>
+
+
+</div>
+</footer>
+</html>
+
+
+

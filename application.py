@@ -7,16 +7,16 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('bootstrap.html')
+    return render_template('main.html')
 
 @app.route('/recommender')
 def show_recommender():
     user_input = list(request.args.to_dict().items())
     print(user_input)
-   # try:
+    # try:
     recommendation = get_ml_recommendations(user_input)
-    #except(IndexError):
-     #   return render_template('error.html')
+    # except(IndexError):
+    # return render_template('error.html')
     return render_template('data.html', data=recommendation)
 
 @app.route('/train')
