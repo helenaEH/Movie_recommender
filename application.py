@@ -12,11 +12,10 @@ def hello_world():
 @app.route('/recommender')
 def show_recommender():
     user_input = list(request.args.to_dict().items())
-    print(user_input)
-    # try:
-    recommendation = get_ml_recommendations(user_input)
-    # except(IndexError):
-    # return render_template('error.html')
+    try:
+        recommendation = get_ml_recommendations(user_input)
+    except(IndexError):
+        return render_template('error.html')
     return render_template('data.html', data=recommendation)
 
 @app.route('/train')

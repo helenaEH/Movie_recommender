@@ -1,20 +1,19 @@
-
-body, html {
-  height: 100%;
-  margin: 0;
+body {
+height: 100%;
+margin: 0;
 }
 
-.bg {
-    background-image: url("https://www.sliit.lk/wp-content/uploads/2018/02/minimalizm-gradient-background.jpg");
 
-  /* Full height */
-  height: 102%;
+
+  height: 200%;
 
   background-position: center;
   background-repeat: repeat;
   background-size: auto;
-  background-attachment: scroll
+  background-attachment: scroll;
+  background-size: cover
 }
+
 .topnav {
   overflow: hidden;
   background-color: #;
@@ -60,18 +59,15 @@ hr {
 }
 
 .footer {
-background: rgba(255,255,255, 0.2);
+background: rgba(255,255,255,0.2);
 opacity:0.6;
+margin-top: 2em;
 float: left;
-width: 1300px;
-height: 30px;
-clear:both
-margin-left: auto;
+width: 100%;
+height: 5%;
 margin-right: auto;
-margin-top: 3em;
-line-height: 1.0em;
-opacity: 1; // Leave this as 1;
-padding:5px;
+opacity: 1;
+padding:15px;
 display: flex;
 align-items: center;
 justify-content: center;

@@ -4,11 +4,92 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="/static/styles.css">
+<link rel="stylesheet" type="text/css" href="/static/styles.css" media="screen">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <title>Movie Recommender!</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+    background: -webkit-linear-gradient(to right, #480048, #C04848);
+    background: linear-gradient(to right, #480048, #C04848);
+
+  height: 200%;
+
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: scroll;
+  background-size: cover
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 2px solid #ddd7f7;
+}
+
+#rcorners1 {
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  width: 400px;
+  height: 100px;
+  text-align: center;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 45px;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+}
+
+.footer {
+background: rgba(255,255,255,0.2);
+opacity:0.6;
+margin-top: 2em;
+float: left;
+width: 100%;
+height: 5%;
+margin-right: auto;
+opacity: 1;
+padding:15px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+</style>
+
+<body>
 
 <div class="bg">
 
@@ -22,107 +103,98 @@
     </div>
   </div>
 </div>
-<div>
-  <p><hr/><p>
-</div>
+    <hr>
 <div class="container-fluid">
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6 mt-4 text-light">
+            <div class="col-sm-5 mt-5 ml-5 text-light">
               <h3 id="rcorners1"> Welcome to the Movie Recommender!</h3>
               <p id="rcorners2">This applications uses unsupervised learning to give you movie recommendations based on the ratings of the movies you have already seen!</p>
             </div>
+
   <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-1 col-lg-5 bg-image"></div>
+    <div class="d-none d-md-flex col-md-5 col-lg-5 bg-image"></div>
     <div class="col-md-12 col-lg-12">
       <div class="login d-flex align-items-center py-10">
         <div class="container">
           <div class="row">
-            <div class="col-sm-23 col-sm-15 mx-auto">
-              <h3 class="login-heading mb-10 text-light">Please rate 3 movies that you have seen: </h3>
-                    <form action='/recommender'>
+            <div class="col-sm-9 mx-auto">
+              <h3 class="login-heading mb-5 text-light">Please rate 3 movies that you have seen: </h3>
+                <form action='/recommender'>
+                          <div class='form-group'>
+                                <input class="form-control" name='Movie1' autocomplete='off' placeholder='Enter First Movie Title'>
+                            </div>
 
-                      <div class='form-group'>
-                          <label class="control-label text-light">First movie</label>
-                          <input class="form-control" name='Movie1' autocomplete='off' placeholder='Enter Movie Title'>
-                      </div>
-
-                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox11" name = "rating1" value="1">
-                            <label class="form-check-label" for="inlineCheckbox11">1</label>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox11" name = "rating11" value="1">
+                            <label class="form-check-label" for="inlineCheckbox12">1</label>
                             </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox12" name = "rating1" value="2">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox12" name = "rating12" value="2">
                             <label class="form-check-label" for="inlineCheckbox12">2</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox13" name = "rating1" value="3">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox13" name = "rating13" value="3">
                             <label class="form-check-label" for="inlineCheckbox13">3</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox14" name = "rating1" value="4">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox14" name = "rating14" value="4">
                             <label class="form-check-label" for="inlineCheckbox14">4</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox15" name = "rating1" value="5">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox15" name = "rating15" value="5">
                             <label class="form-check-label" for="inlineCheckbox15">5</label>
                           </div>
 
-                      <div class='form-group'>
-                        <label class="control-label text-light">Second movie</label>
-                          <input class="form-control" name='Movie2' autocomplete='off' placeholder='Enter Movie Title'>
-                      </div>
-
-                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox21" name = "rating1" value="1">
+                          <div class='form-group mt-3'>
+                              <input class="form-control" name='Movie2' autocomplete='off' placeholder='Enter Second Movie Title'>
+                          </div>
+                          <div class="form-check form-check-inline mt-2">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox21" name = "rating21" value="1">
                             <label class="form-check-label" for="inlineCheckbox21">1</label>
-                            </div>
+                          </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox22" name = "rating1" value="2">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox22" name = "rating22" value="2">
                             <label class="form-check-label" for="inlineCheckbox22">2</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox23" name = "rating1" value="3">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox23" name = "rating23" value="3">
                             <label class="form-check-label" for="inlineCheckbox23">3</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox24" name = "rating1" value="4">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox24" name = "rating24" value="4">
                             <label class="form-check-label" for="inlineCheckbox24">4</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox25" name = "rating1" value="5">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox25" name = "rating25" value="5">
                             <label class="form-check-label" for="inlineCheckbox25">5</label>
                           </div>
-
-                      <div class='form-group'>
-                        <label class="control-label text-light">Third movie</label>
-                          <input class="form-control" name='Movie3' autocomplete='off' placeholder='Enter Movie Title'>
-                      </div>
-                      <div></div>
-                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox31" name = "rating1" value="1">
+                          <div class='form-group mt-4'>
+                                <input class="form-control" name='Movie3' autocomplete='off' placeholder='Enter Third Movie Title'><br>
+                          </div>
+                          <div class="form-check form-check-inline ">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox31" name = "rating31" value="1">
                             <label class="form-check-label" for="inlineCheckbox31">1</label>
-                            </div>
+                          </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox32" name = "rating1" value="2">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox32" name = "rating32" value="2">
                             <label class="form-check-label" for="inlineCheckbox32">2</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox33" name = "rating1" value="3">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox33" name = "rating33" value="3">
                             <label class="form-check-label" for="inlineCheckbox33">3</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox34" name = "rating1" value="4">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox34" name = "rating34" value="4">
                             <label class="form-check-label" for="inlineCheckbox34">4</label>
                           </div>
                           <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox35" name = "rating1" value="5">
+                            <input class="form-check-input" type="radio" id="inlineCheckbox35" name = "rating35" value="5">
                             <label class="form-check-label" for="inlineCheckbox35">5</label>
                           </div>
-
-                      <input class="btn btn-primary btn-block btn-login text-uppercase mb-2 mt-3" type="submit" value="Get Recommendations!">
-                      </form>
+                         <input class="btn btn btn-outline-light btn-block btn-login text-uppercase text-light mb-1 mt-3" type="submit" value="Get Recommendations!">
+                    </form>
                     </div>
                   </div>
                </div>
@@ -137,9 +209,8 @@
 </footer>
 </div>
 
+</body>
 
-</div>
-</footer>
 </html>
 
 
