@@ -7,10 +7,6 @@ from sqlalchemy import Table, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# 1 NMF always recommends the same film
-# 2 sql umr query takes a really long time
-# 3 sql umr is transposed
-
 engine = create_engine(f'postgres://postgres:postgres@localhost/recommender_project')
 base = declarative_base(engine)
 Session = sessionmaker(engine)
